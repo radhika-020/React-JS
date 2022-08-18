@@ -33,3 +33,75 @@
     );
    }
   }
+  
+  
+5) Components in ReactJS :-
+    a) Components are the building blocks of any React application, and a single app usually consists of multiple components.
+    b) It splits the UI into independent, reusable pieces that can be processed seperately.
+    c) A component is essentially a piece of the UI.
+    For example,
+    import React, {Component} from 'react';
+    
+    export defaultt class MainApp extends Component {
+      render() {
+        return (
+          <div>
+            <p>Welcome!</p>
+          </div>
+         )
+       }
+      }
+    
+    
+6) State in React :-
+    a) A state in object that stores the values of properties belonging to a component that could change over a period of time.
+    b) a state can be modified based on the user action or network changes.
+    c) Every time the state of an object chnages, React re-renders the component to the browser.
+    d) The state object can store multiple properies.
+    e) this.setState() is used to change the value of tyhe state object.
+    f) setState() function performs a shallow merge between the new and the previous state.
+    g) A sate holdss the data that a component renders on the webpage.
+    For example,
+    import React from 'react';
+    
+    class App extends React.Component {
+      constructor(props) {
+        super(props);
+        
+        this.state = {
+        car : "1600 cc", 
+        bike : "150 cc"
+        }
+       }
+      render() {
+        return ( 
+          <div>
+            <h1>{this.state.car}</h1>
+            <h2>{this.state.bike}</h2>
+          </div>
+         );
+       }
+      }
+  
+7) Higher Order Components :- It is a function that takes a component and returns a new component. It facilitates resuing of component logic. It is just like a JS Function that is used to add additional functionalities to the existing Components. For example,
+    const NewComponent = higherOrderComponent(originalComponent)
+    
+   Pure Components :- React Component is the base class for React components. React.PureComponent is a variation of React.Component class and does a shallow comparison of props and state. A state component can be considereed pure if it renders the same output for the same state and props.
+   Shallow Comparsion :- This checks for equality. In case of scalar attributes, it only compares their values and in case of objects, it only compares their references. 
+   
+8) event in React :-
+    import React, {Component} from 'react';
+    
+    export defaultt class MainApp extends Component {
+      callapp() {
+        alert("App is called")
+      }
+      render() {
+        return (
+          <div>
+            <p>Welcome!</p>
+            <button onClick = {this.callapp}>Call.</button>
+          </div>
+         )
+       }
+      }
