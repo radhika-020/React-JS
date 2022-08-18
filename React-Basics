@@ -1,0 +1,35 @@
+1) JSX :-
+  a) JSX is a syntax extension to JavaScript. It is used with React to describe what the User Interface should look like.
+  b) By using JSX, you can write HTML structures in the same file that contains JavaScript code.
+  c) JsX helps in making the code easier to understand and debug as it avoids usage of JS DOM structures which are rather complex.
+
+
+2) Virtual DOM :-
+  a) React keeps a lightweight representation of the Real DOM in the memory, and that is known as the VIrtual DOM.
+  b) Manipulating Real DOM is much slower than manipulating virtual DOM, because nothing gets drawn onscreen.
+  c) When the state of an object changes, Virtual DOM changes only that object in the Real DOM instead of updating all the objects.
+  
+  
+3) React Extensions :-
+  a) React goes beyond simple UI and has many extensions for complete application architecture support.
+  b) It provides server-side rendering.
+  c) Supports mobile app development.
+  d) Extended with Flux and Redux, among others.
+  Some of the extensions that can be mentioned here are :-
+    i) Flux :- It is the application architecture that Facebook uses for building web applications.
+    ii) React Native :- It lets you build mobile apps using only JavaScript.
+    
+    
+4) Event in React :-
+  a) An event is an action that can be triggered by a User or any System event like pressing a key, a mouse click, etc.
+  b) It can be created as follows :-
+  create Simple extends React.Component {
+    work() {
+      alert("Good work!");
+   }
+   render() {
+    return (
+      <button onClick={this.work}>Do some work!</button>
+    );
+   }
+  }
