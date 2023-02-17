@@ -1,11 +1,74 @@
-React was first releasedin the year 2013.
-This was originallycreated by Jordan Walke
+React was first released in the year 2013.
+This was originally created by Jordan Walke.
 This is maintained by Facebook.
-Powers thousands of mobile apps,imcluding enterprise apps.
+Powers thousands of mobile apps, including enterprise apps.
+
+These two lines are used to add react into the html file :-
+<script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script> :- react, This will include the react library into the file.
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script> :- react-dom, This will include the react-dom library into the file.
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script> :- This can be included in the html file by writing type = "text/babel" inside the script tab. This is used to add JavaScript XML (JSX) in the html file.
+
+ReactDOM.render() allows us to render something that looks very like HTML. This mainly consists of two arguments/parameter inside the render function (render function is used for displaying the code on teh screen). First argument/parameter is the HTML tag that you want to render on the screen or display on the screen and the second one will be where you want to render, for say, inside a div element in the HTML file with id root then in that case we will write this as :-
+ReactDOM.render(<h1>Hello, Everyone!</h1>, document.getElementById("root"))
+For selecting a query, we write document.querySelector("#root")
+React is composable, which means that it can be broken down into various different components and comprised in one js file.
+For example,
+function mainComponent (
+  return <h1>Hello!</h1>
+)
+
+ReactDOM.render(<mainComponent/>, document.getElementById("root"))
+
+React is Declarative, which means, only tell the system what to do and rest will be figured out by React itself, which is opposite to the concept of Imperative, which requires the system to tell each and every step that needs to be done.
+
+ReactDOM.render(<h1>Hello, Everyone!</h1>, document.getElementById("root")) :- The same thing can be done in vanilla JS as :-
+const h1 = document.createElement("h1")
+h1.textContent = "Hello, Everyone!"
+h1.className = "header"
+document.getElementById("root").append(h1)
+
+Now, removing the hard coded script tags for including react and reaact DOM in oyr project, we will now use the react dependencies (version 18, the latest one). For that, all we have to do is :-
+import React from "react
+import ReactDOM from "react-dom/client"
+
+Now, here, instead of the render function, we have to use createRoot element. For say :-
+ReactDOM.createRoot(document.getElementById("root")).render(<h1>Hello</h1>)
+This can also be written as :-
+const root = ReactDOM.createRoot(document.getElementById("root")
+root.render(<h1>Hello</h1>)
+
 1) JSX :-
   a) JSX is a syntax extension to JavaScript. It is used with React to describe what the User Interface should look like.
   b) By using JSX, you can write HTML structures in the same file that contains JavaScript code.
   c) JsX helps in making the code easier to understand and debug as it avoids usage of JS DOM structures which are rather complex.
+  d) This is a JavaScript with a mix of HTML inside it.
+  e) JSX inside the ReactDOM.render() allows only one parent element, for example :-
+    ReactDOM.render(<h1>This is JSX</h1>, document.getElementById("root"))
+    Writing with two sibling elements, for example :-
+      ReactDOM.render(<h1>Hello, Everyone!</h1><p>This is a paragraph</p>, document.getElementById("root")) :- This will give us an Unknown Error in the browser. This can be rewritten in the correct format as :-
+        ReactDOM.render(
+        <div>
+          <h1>Hello, Everyone!</h1>
+          <p>This is a paragraph. </p>
+        </div>, 
+        document.getElementById("root"))
+        Now, the above line contains only one parent element, div, and more than one children elements(h1 and p).
+        This can also be written as :-
+          const page = (
+          <div>
+            <h1>Hello, Everyone!</h1>
+            <p>This is a paragraph. </p>
+          </div>
+          )
+          ReactDOM.render(page, getElementById("root"))
+  f) Since, we know that JSX must have only one parent elemnt, but can have multiple children inside it, so that can also be written as :-
+    const page = (
+      <>
+        <h1>Hello</h1>
+        <p>This is Radhika</p>
+      </> 
+    )
+  These empty opening and closing tags are called as fragments.
 
 
 2) Virtual DOM :-
