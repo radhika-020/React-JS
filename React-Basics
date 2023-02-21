@@ -28,7 +28,7 @@ h1.className = "header"
 document.getElementById("root").append(h1)
 
 Now, removing the hard coded script tags for including react and reaact DOM in oyr project, we will now use the react dependencies (version 18, the latest one). For that, all we have to do is :-
-import React from "react
+import React from "react"
 import ReactDOM from "react-dom/client"
 
 Now, here, instead of the render function, we have to use createRoot element. For say :-
@@ -172,3 +172,85 @@ root.render(<h1>Hello</h1>)
          )
        }
       }
+      
+Creating Custom Components :-
+function temporaryName(){
+  return 
+    <h1>Hello!</h1>
+  }
+  
+ReactDOM.render(temporaryName(), document.getElementById("root"))
+#This wprks same as rendering HTML directly in ReactDOM or rendering HTML using a const element. This use or making of own functions for rendering is called as Custom Components.
+#Always use Pascal Case for naimg convention of the functions.
+function TemporaryName(){
+  return 
+    <h1>Hello!</h1>
+  }
+  
+ReactDOM.render(<temporaryName/>, document.getElementById("root"))
+React Components are the react elements that the user can see (UI).
+Rendering one component into another :
+function Header(){
+  return (
+    <header>
+      <nav><img src="" width = "40px"/>
+      </nav<
+    /header>
+  )
+  }
+  
+ function MainContent(){
+ return(
+    <Header/>
+    <ol>Wo laude jaisa hai lekin fir bhi mujhe pasand hai.</ol>
+ )
+ }
+ 
+ ReactDOM.render(<MainContent/>, document.getElementByID("root"))
+ 
+ Adding className to add CSS in the elements :-
+ function Header(){
+  return (
+    <header className = "header">
+      <nav className = "nav"><img src="" width = "40px"/>
+      </nav<
+    /header>
+  )
+  }
+  
+  Exporting Components from other fikes :-
+  
+  #Header.js
+  import React from "react"
+  import ReactDom from "react-dom"
+  
+  export default function Header (){
+    return(
+      <h1>Hello!</h1>
+    )
+  }
+  
+  We can either export our Component by the above way or the other is mentioned below :-
+  import React from "react"
+  import ReactDom from "react-dom"
+  
+ function Header (){
+    return(
+      <h1>Hello!</h1>
+    )
+  }
+  export default Header
+  
+  
+  Importing this into our main file, index.js :-
+  import React from "react
+  import ReactDOM from "react-dom"
+  import Header from "./Header" === ./ symbol signifies that Header.js file is present in our working directory or folder and we are not importing any default library or dependency.
+  
+  function MainCony=tent () {
+    return (
+      <Header/>
+    )
+  }
+  
+  ReactDOM.render(<MainContent/>, document.getElementByID("root"))
