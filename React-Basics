@@ -234,7 +234,7 @@ function Header(){
   import React from "react"
   import ReactDom from "react-dom"
   
- function Header (){
+ function Header(){
     return(
       <h1>Hello!</h1>
     )
@@ -247,10 +247,26 @@ function Header(){
   import ReactDOM from "react-dom"
   import Header from "./Header" === ./ symbol signifies that Header.js file is present in our working directory or folder and we are not importing any default library or dependency.
   
-  function MainCony=tent () {
+  function MainContent () {
     return (
       <Header/>
     )
   }
   
   ReactDOM.render(<MainContent/>, document.getElementByID("root"))
+  
+  Using Vite which is a tool to create a local React App.
+  To check the version of node,
+  node -v
+  To check the version of npm,
+  npm -v
+  
+  npm create vite@latest
+  Project name: vite-react-radhika
+  Select a framework: react
+  Select a variant: react / JavaScript
+  Running three commands afterwards, 
+  cd vite-react-radhika
+  npm install
+  npm run dev
+  Vite is a build tool that aims to provide a faster and leaner development experience for modern web projects.
